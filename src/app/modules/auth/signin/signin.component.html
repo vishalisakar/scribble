@@ -1,57 +1,8 @@
-<div class="flex flex-col gap-2 justify-center items-center">
-  <div class="header">
-    <div class="header-title-logo border-indigo-900  mb-2">
-      <mat-icon class="">fingerprint</mat-icon>
-      
-    </div>
-    <h1 class="header-title text-3xl text-gray-900 font-bold mb-2 ">Signin</h1>
-    <a class="header-subtitle  mb-2 " routerLink="/signup">Don't have an account? <span class="text-indigo-900 font-bold">
-        Sign up
-    </span> </a>
-  </div>
+<div class="flex flex-col gap-2">
+<h1>signin</h1>
 
-  <form class="flex flex-col gap-2" [formGroup]="loginForm">
-      <!-- email field -->
-    <mat-form-field appearance="outline" class="w-96">
-      <mat-label>Email </mat-label>
-      <input matInput formControlName="email" type="email" />
+<a  routerLink="/signup">Did not register? sign-up</a>
+<a  routerLink="/dashboard">Dashboard</a>
 
-      <mat-icon matSuffix>mail</mat-icon>
-      <mat-error *ngIf="loginForm?.get('email')?.errors?.email">
-        <i class="fal fa-times-circle"></i> Email is not valid
-      </mat-error>
-      <mat-error *ngIf="loginForm?.get('email')?.errors?.required">
-        <i class="material-icons">error_outline</i>
 
-        Email is Required!
-      </mat-error>
-    </mat-form-field>
-    <!-- password field -->
-    <mat-form-field appearance="outline" class="w-96">
-      <mat-label>Password </mat-label>
-      <input
-        matInput
-        formControlName="password"        
-        #passwordField
-        [type]="hide ? 'password' : 'text'"
-      />
-
-      
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-
-      
-      <mat-error *ngIf="loginForm?.get('password')?.errors?.required">
-        <i class="material-icons">error_outline</i>
-
-        Password is Required!
-      </mat-error>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" class="p-2 rounded-full w-40 place-self-center text-white " type="button">
-        Submit 
-    </button>
-  </form>
-  
 </div>
